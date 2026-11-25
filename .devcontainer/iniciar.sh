@@ -18,7 +18,7 @@ else
     gvenzl/oracle-free:23-slim-faststart > /dev/null
 fi
 echo "Esperando o Oracle ficar pronto (1 a 3 minutos)..."
-until [ "$(docker inspect -f '{{.State.Health.Status}}' parallax-oracle)" = "healthy" ]; do sleep 5; done
+until docker exec parallax-oracle healthcheck.sh > /dev/null 2>&1; do sleep 5; done
 python -m parallax.setup
 setsid nohup python -m parallax > /tmp/parallax.log 2>&1 < /dev/null &
 sleep 3
