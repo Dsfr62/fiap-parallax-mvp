@@ -1,0 +1,61 @@
+laudo_id,analysis_id,agronomo_id,praga_confirmada,severidade_laudo_pct,data_laudo,observacao
+LA-0001,AN-00453,AG-03,Oídio,13.4,2026-09-03,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0002,AN-00429,AG-01,Mancha Parda,6.8,2026-09-05,Sem sintoma no restante do talhao; caso isolado.
+LA-0003,AN-00636,AG-03,Mancha Parda,9.5,2026-09-04,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0004,AN-00216,AG-02,Lagarta,5.1,2026-08-13,Necessário acompanhar após a próxima chuva.
+LA-0005,AN-00246,AG-02,Lagarta,16.5,2026-09-05,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0006,AN-00190,AG-02,Lagarta,11.4,2026-08-13,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0007,AN-00367,AG-01,Lagarta,1.7,2026-08-28,Sem sintoma no restante do talhao; caso isolado.
+LA-0008,AN-00449,AG-01,Oídio,19.6,2026-08-17,Necessário acompanhar após a próxima chuva.
+LA-0009,AN-00057,AG-03,Mancha Parda,12.0,2026-08-11,Sem sintoma no restante do talhao; caso isolado.
+LA-0010,AN-00594,AG-01,Oídio,1.4,2026-09-01,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0011,AN-00339,AG-01,Mancha Parda,0.4,2026-08-09,Ocorrência disseminada no terço inferior da planta.
+LA-0012,AN-00256,AG-03,Mancha Parda,30.1,2026-08-19,Necessário acompanhar após a próxima chuva.
+LA-0013,AN-00235,AG-02,Ferrugem,31.5,2026-08-24,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0014,AN-00462,AG-01,Lagarta,2.4,2026-09-02,Ocorrência disseminada no terço inferior da planta.
+LA-0015,AN-00085,AG-03,Ferrugem,3.7,2026-09-08,Ocorrência disseminada no terço inferior da planta.
+LA-0016,AN-00184,AG-03,Oídio,3.1,2026-09-04,Ocorrência disseminada no terço inferior da planta.
+LA-0017,AN-00065,AG-02,Ferrugem,5.5,2026-08-27,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0018,AN-00549,AG-03,Lagarta,11.7,2026-09-04,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0019,AN-00621,AG-03,Mancha Parda,5.7,2026-08-14,Necessário acompanhar após a próxima chuva.
+LA-0020,AN-00589,AG-01,Oídio,22.8,2026-08-22,Necessário acompanhar após a próxima chuva.
+LA-0021,AN-00617,AG-01,Ferrugem,9.4,2026-08-10,Sem sintoma no restante do talhao; caso isolado.
+LA-0022,AN-00292,AG-02,Ferrugem,1.5,2026-09-04,Necessário acompanhar após a próxima chuva.
+LA-0023,AN-00508,AG-01,Ferrugem,4.5,2026-08-10,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0024,AN-00107,AG-01,Mancha Parda,14.2,2026-08-22,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0025,AN-00344,AG-03,Oídio,1.2,2026-09-07,"Confirmado em campo, foco restrito à bordadura do talhão."
+LA-0026,AN-00214,AG-01,Oídio,2.6,2026-08-18,"Confirmado em campo, foco restrito à bordadura do talhão."
+LA-0027,AN-00167,AG-02,Oídio,0.4,2026-09-07,Sem sintoma no restante do talhao; caso isolado.
+LA-0028,AN-00414,AG-01,Mancha Parda,5.1,2026-08-20,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0029,AN-00541,AG-02,Ferrugem,3.9,2026-09-01,Necessário acompanhar após a próxima chuva.
+LA-0030,AN-00198,AG-02,Oídio,0.4,2026-08-19,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0031,AN-00227,AG-03,Ferrugem,8.3,2026-08-27,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0032,AN-00143,AG-01,Mancha Parda,3.8,2026-09-06,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0033,AN-00281,AG-03,Mancha Parda,17.3,2026-08-30,Ocorrência disseminada no terço inferior da planta.
+LA-0034,AN-00006,AG-02,Lagarta,36.6,2026-09-05,Ocorrência disseminada no terço inferior da planta.
+LA-0035,AN-00350,AG-03,Lagarta,14.6,2026-08-22,Sem sintoma no restante do talhao; caso isolado.
+LA-0036,AN-00298,AG-03,Oídio,15.6,2026-08-12,Sem sintoma no restante do talhao; caso isolado.
+LA-0037,AN-00209,AG-03,Lagarta,0.7,2026-09-08,Necessário acompanhar após a próxima chuva.
+LA-0038,AN-00218,AG-01,Ferrugem,1.2,2026-08-23,Necessário acompanhar após a próxima chuva.
+LA-0039,AN-00625,AG-03,Mancha Parda,3.3,2026-09-05,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0040,AN-00015,AG-03,Ferrugem,9.5,2026-08-15,Sem sintoma no restante do talhao; caso isolado.
+LA-0041,AN-00133,AG-03,Oídio,3.6,2026-08-30,"Confirmado em campo, foco restrito à bordadura do talhão."
+LA-0042,AN-00076,AG-02,Oídio,10.8,2026-08-26,Necessário acompanhar após a próxima chuva.
+LA-0043,AN-00569,AG-02,Oídio,2.7,2026-08-30,Ocorrência disseminada no terço inferior da planta.
+LA-0044,AN-00194,AG-03,Ferrugem,1.7,2026-08-18,Necessário acompanhar após a próxima chuva.
+LA-0045,AN-00361,AG-02,Oídio,5.1,2026-08-30,Sem sintoma no restante do talhao; caso isolado.
+LA-0046,AN-00271,AG-01,Ferrugem,48.2,2026-08-18,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0047,AN-00564,AG-01,Mancha Parda,2.1,2026-08-13,Sem sintoma no restante do talhao; caso isolado.
+LA-0048,AN-00114,AG-03,Lagarta,3.0,2026-08-18,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0049,AN-00253,AG-01,Lagarta,3.4,2026-08-10,Necessário acompanhar após a próxima chuva.
+LA-0050,AN-00501,AG-03,Lagarta,11.7,2026-08-21,"Confirmado em campo, foco restrito à bordadura do talhão."
+LA-0051,AN-00139,AG-01,Ferrugem,18.4,2026-08-15,Necessário acompanhar após a próxima chuva.
+LA-0052,AN-00603,AG-02,Lagarta,5.0,2026-08-10,Ocorrência disseminada no terço inferior da planta.
+LA-0053,AN-00220,AG-02,Ferrugem,16.3,2026-08-12,Necessário acompanhar após a próxima chuva.
+LA-0054,AN-00595,AG-02,Ferrugem,4.4,2026-08-24,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0055,AN-00378,AG-02,Ferrugem,4.4,2026-08-11,Sintoma compatível; recomendo reamostragem em sete dias.
+LA-0056,AN-00005,AG-03,Lagarta,1.8,2026-08-30,Sem sintoma no restante do talhao; caso isolado.
+LA-0057,AN-00368,AG-03,Ferrugem,15.5,2026-08-29,Sem sintoma no restante do talhao; caso isolado.
+LA-0058,AN-00110,AG-01,Mancha Parda,1.7,2026-09-08,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0059,AN-00290,AG-03,Ferrugem,1.5,2026-09-06,"Foto com foco insuficiente, diagnóstico feito em visita."
+LA-0060,AN-00050,AG-01,Ferrugem,11.7,2026-09-08,Sintoma compatível; recomendo reamostragem em sete dias.

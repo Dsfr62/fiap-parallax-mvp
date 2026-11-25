@@ -1,0 +1,7 @@
+usuario_id,login,nome,papel,registro,propriedade_id
+G-01,gestor,Helena Prado,gestor,,
+AG-01,tecnico1,Rafael Souza,tecnico,CREA-SP DEMO-01,
+AG-02,tecnico2,Camila Ribeiro,tecnico,CREA-SP DEMO-02,
+AG-03,tecnico3,João Batista,tecnico,CREA-SP DEMO-03,
+P-009,produtor,Sítio Água Limpa,produtor,,PP-009
+P-010,produtor2,Fazenda Santo Antônio,produtor,,PP-010

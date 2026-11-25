@@ -1,0 +1,36 @@
+talhao_id,talhao_nome,propriedade_id,propriedade_nome,produtor_pseudonimo,municipio,uf,cultura,area_ha,latitude,longitude
+T-001-1,Talhão 1,PP-001,Fazenda Alfa,P-ecce1d4052,Cravinhos,SP,Milho,43.2,-21.12228,-47.89235
+T-001-2,Talhão 2,PP-001,Fazenda Alfa,P-ecce1d4052,Cravinhos,SP,Soja,11.1,-21.11787,-47.89864
+T-002-1,Talhão 1,PP-002,Fazenda Beta,P-432e0aed27,Serrana,SP,Milho,58.3,-21.07798,-47.85295
+T-002-2,Talhão 2,PP-002,Fazenda Beta,P-432e0aed27,Serrana,SP,Soja,41.8,-21.07441,-47.83932
+T-002-3,Talhão 3,PP-002,Fazenda Beta,P-432e0aed27,Serrana,SP,Soja,39.8,-21.0783,-47.85413
+T-003-1,Talhão 1,PP-003,Fazenda Gama,P-40e3732b19,Ribeirão Preto,SP,Soja,37.9,-21.13077,-47.86815
+T-003-2,Talhão 2,PP-003,Fazenda Gama,P-40e3732b19,Ribeirão Preto,SP,Soja,55.1,-21.12454,-47.84899
+T-004-1,Talhão 1,PP-004,Sítio Boa Vista,P-53822c7f2f,Ribeirão Preto,SP,Soja,58.3,-21.09521,-47.85598
+T-004-2,Talhão 2,PP-004,Sítio Boa Vista,P-53822c7f2f,Ribeirão Preto,SP,Soja,54.7,-21.09581,-47.8571
+T-005-1,Talhão 1,PP-005,Fazenda Santa Rita,P-765ec768f5,Cravinhos,SP,Soja,9.1,-21.12425,-47.85964
+T-005-2,Talhão 2,PP-005,Fazenda Santa Rita,P-765ec768f5,Cravinhos,SP,Soja,54.4,-21.11981,-47.86901
+T-006-1,Talhão 1,PP-006,Fazenda São João,P-f99598d315,Ribeirão Preto,SP,Milho,30.8,-21.12924,-47.86513
+T-006-2,Talhão 2,PP-006,Fazenda São João,P-f99598d315,Ribeirão Preto,SP,Soja,14.0,-21.12174,-47.88392
+T-006-3,Talhão 3,PP-006,Fazenda São João,P-f99598d315,Ribeirão Preto,SP,Milho,23.2,-21.11935,-47.88223
+T-007-1,Talhão 1,PP-007,Sítio Três Irmãos,P-e1ac6d49be,Serrana,SP,Soja,58.3,-21.09678,-47.84912
+T-007-2,Talhão 2,PP-007,Sítio Três Irmãos,P-e1ac6d49be,Serrana,SP,Milho,52.1,-21.10456,-47.84294
+T-008-1,Talhão 1,PP-008,Fazenda Bela Vista,P-167f2bb5da,Cravinhos,SP,Soja,62.0,-21.08098,-47.86086
+T-008-2,Talhão 2,PP-008,Fazenda Bela Vista,P-167f2bb5da,Cravinhos,SP,Milho,9.3,-21.07554,-47.87122
+T-008-3,Talhão 3,PP-008,Fazenda Bela Vista,P-167f2bb5da,Cravinhos,SP,Soja,60.4,-21.0848,-47.87037
+T-009-1,Talhão 1,PP-009,Sítio Água Limpa,P-751e17c644,Ribeirão Preto,SP,Soja,50.3,-21.10848,-47.87472
+T-009-2,Talhão 2,PP-009,Sítio Água Limpa,P-751e17c644,Ribeirão Preto,SP,Milho,46.7,-21.11816,-47.85657
+T-010-1,Talhão 1,PP-010,Fazenda Santo Antônio,P-a4b26b06e3,Ribeirão Preto,SP,Soja,22.6,-21.13078,-47.89011
+T-010-2,Talhão 2,PP-010,Fazenda Santo Antônio,P-a4b26b06e3,Ribeirão Preto,SP,Milho,55.0,-21.14621,-47.89809
+T-010-3,Talhão 3,PP-010,Fazenda Santo Antônio,P-a4b26b06e3,Ribeirão Preto,SP,Soja,48.9,-21.12863,-47.9025
+T-011-1,Talhão 1,PP-011,Fazenda Céu Azul,P-e77864da28,Serrana,SP,Milho,44.4,-21.08082,-47.84779
+T-011-2,Talhão 2,PP-011,Fazenda Céu Azul,P-e77864da28,Serrana,SP,Milho,35.3,-21.07937,-47.85583
+T-011-3,Talhão 3,PP-011,Fazenda Céu Azul,P-e77864da28,Serrana,SP,Soja,12.9,-21.08787,-47.86051
+T-012-1,Talhão 1,PP-012,Sítio Barra Mansa,P-76b2f26a90,Franca,SP,Soja,15.6,-20.59782,-47.40907
+T-012-2,Talhão 2,PP-012,Sítio Barra Mansa,P-76b2f26a90,Franca,SP,Soja,40.9,-20.59067,-47.41958
+T-012-3,Talhão 3,PP-012,Sítio Barra Mansa,P-76b2f26a90,Franca,SP,Soja,46.7,-20.60296,-47.4113
+T-013-1,Talhão 1,PP-013,Fazenda Dois Irmãos,P-543c86e137,Franca,SP,Café,40.5,-20.59643,-47.41454
+T-013-2,Talhão 2,PP-013,Fazenda Dois Irmãos,P-543c86e137,Franca,SP,Milho,14.4,-20.59293,-47.41842
+T-014-1,Talhão 1,PP-014,Fazenda São Bento,P-cb5b49293a,Franca,SP,Soja,42.7,-20.56773,-47.46386
+T-014-2,Talhão 2,PP-014,Fazenda São Bento,P-cb5b49293a,Franca,SP,Soja,32.8,-20.57037,-47.45165
+T-014-3,Talhão 3,PP-014,Fazenda São Bento,P-cb5b49293a,Franca,SP,Milho,31.6,-20.56412,-47.46417

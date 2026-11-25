@@ -1,0 +1,93 @@
+name: MVP no Oracle
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  oracle:
+    name: ${{ matrix.nome }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - nome: Oracle Database Free 23ai (testes, ciclo no navegador e vídeo)
+            imagem: gvenzl/oracle-free:23-slim-faststart
+            servico: FREEPDB1
+            e2e: true
+          - nome: Oracle XE 21c (o mesmo schema em versão anterior)
+            imagem: gvenzl/oracle-xe:21-slim-faststart
+            servico: XEPDB1
+            e2e: false
+    services:
+      oracle:
+        image: ${{ matrix.imagem }}
+        env:
+          ORACLE_PASSWORD: sys${{ github.run_id }}
+          APP_USER: parallax
+          APP_USER_PASSWORD: px${{ github.run_id }}
+        ports:
+          - 1521:1521
+        options: >-
+          --health-cmd healthcheck.sh
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 60
+    env:
+      PARALLAX_DSN: localhost:1521/${{ matrix.servico }}
+      PARALLAX_USER: parallax
+      PARALLAX_PASSWORD: px${{ github.run_id }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Dependências
+        run: pip install -r requirements.txt -r requirements-dev.txt
+      - name: Senha de demonstração sorteada nesta execução
+        run: echo "PARALLAX_DEMO_PASSWORD=$(openssl rand -hex 8)" >> "$GITHUB_ENV"
+      - name: Testes da API contra o Oracle
+        run: |
+          mkdir -p saida
+          python -m pytest -v tests/ 2>&1 | tee saida/pytest.log
+      - name: Banco novo para a demonstração
+        if: matrix.e2e
+        run: python -m parallax.setup 2>&1 | tee saida/setup.log
+      - name: Sobe a aplicação
+        if: matrix.e2e
+        run: |
+          nohup python -m parallax > saida/app.log 2>&1 &
+          for i in $(seq 1 40); do curl -sf localhost:8000/api/health > saida/health.json && break; sleep 1; done
+          cat saida/health.json
+      - name: Ciclo completo no navegador, com prints e vídeo
+        if: matrix.e2e
+        run: |
+          python -m playwright install --with-deps chromium
+          python tests/e2e_fluxo.py http://127.0.0.1:8000 saida 2>&1 | tee saida/e2e.log
+      - name: Resumo
+        if: always()
+        run: |
+          {
+            echo "### ${{ matrix.nome }}"
+            echo
+            grep -E "passed|failed|error" saida/pytest.log | tail -1 || true
+            [ -f saida/health.json ] && { echo; echo '```json'; cat saida/health.json; echo; echo '```'; }
+            [ -f saida/prints/LEGENDAS.md ] && { echo; cat saida/prints/LEGENDAS.md; }
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidencias-${{ matrix.servico }}
+          path: saida/
+          retention-days: 30

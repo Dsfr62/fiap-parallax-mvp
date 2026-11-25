@@ -1,0 +1,28 @@
+# Para quem tem Docker: Oracle Database Free + Parallax, com o banco montado do zero a cada subida.
+# Antes: crie um .env (veja .env.exemplo) com PARALLAX_PASSWORD e PARALLAX_DEMO_PASSWORD. Depois: docker compose up
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim-faststart
+    environment:
+      ORACLE_PASSWORD: ${PARALLAX_PASSWORD:?defina PARALLAX_PASSWORD no .env}
+      APP_USER: parallax
+      APP_USER_PASSWORD: ${PARALLAX_PASSWORD}
+    ports:
+      - "1521:1521"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 60
+  app:
+    build: .
+    depends_on:
+      oracle:
+        condition: service_healthy
+    environment:
+      PARALLAX_DSN: oracle:1521/FREEPDB1
+      PARALLAX_USER: parallax
+      PARALLAX_PASSWORD: ${PARALLAX_PASSWORD}
+      PARALLAX_DEMO_PASSWORD: ${PARALLAX_DEMO_PASSWORD:?defina PARALLAX_DEMO_PASSWORD no .env}
+    ports:
+      - "8000:8000"
