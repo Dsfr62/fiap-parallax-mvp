@@ -82,8 +82,8 @@ jobs:
             echo "### ${{ matrix.nome }}"
             echo
             grep -E "passed|failed|error" saida/pytest.log | tail -1 || true
-            [ -f saida/health.json ] && { echo; echo '```json'; cat saida/health.json; echo; echo '```'; }
-            [ -f saida/prints/LEGENDAS.md ] && { echo; cat saida/prints/LEGENDAS.md; }
+            if [ -f saida/health.json ]; then echo; echo '```json'; cat saida/health.json; echo; echo '```'; fi
+            if [ -f saida/prints/LEGENDAS.md ]; then echo; cat saida/prints/LEGENDAS.md; fi
           } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()

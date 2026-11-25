@@ -97,7 +97,7 @@ with sync_playwright() as p:
     expect(primeira).to_contain_text("O que a tela mostrou")
     foto(page, "10-tecnico-rota", "Técnico vê a rota na ordem liberada e o que a tela mostrou de cada talhão")
     primeira.get_by_label("Praga confirmada na visita").select_option("Ferrugem")
-    primeira.get_by_role("button", name="10-20%").click()
+    primeira.locator(".faixas button").nth(1).click()  # a faixa 10-20%
     primeira.get_by_label("Ajuste fino da severidade").fill("13")
     primeira.get_by_label("Observação").fill("Ferrugem no terço inferior; reaplicar em 7 dias.")
     primeira.get_by_role("button", name="Assinar laudo").click()
