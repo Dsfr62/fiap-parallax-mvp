@@ -22,9 +22,13 @@ PRINTS.mkdir(parents=True, exist_ok=True)
 passos = []
 
 
-def foto(page, nome, legenda):
+def foto(page, nome, legenda, alvo=None):
+    """Print da area visivel (o topo fixo fica no lugar), com o alvo rolado para dentro dela."""
+    if alvo is not None:
+        alvo.scroll_into_view_if_needed()
+        page.evaluate("window.scrollBy(0, -90)")
     page.wait_for_timeout(600)
-    page.screenshot(path=PRINTS / f"{nome}.png", full_page=True)
+    page.screenshot(path=PRINTS / f"{nome}.png")
     passos.append(f"| {nome}.png | {legenda} |")
     print(f"  ok  {nome}: {legenda}")
 
@@ -67,7 +71,7 @@ with sync_playwright() as p:
     expect(page.locator("#contador")).to_have_text("0", timeout=20000)
     expect(page.locator("#minhas-fotos")).to_contain_text("chegou à cooperativa")
     expect(page.locator("#minhas-fotos")).to_contain_text("saiu da fila sem sinal")
-    foto(page, "04-produtor-foto-chegou", "O sinal voltou: a foto saiu da fila e entrou no Oracle")
+    foto(page, "04-produtor-foto-chegou", "O sinal voltou: a foto saiu da fila e entrou no Oracle", page.locator("#fila"))
 
     # 3. gestor: rota da semana, filtro, explicacao, reordenar e liberar
     entrar(page, "gestor")
@@ -95,19 +99,20 @@ with sync_playwright() as p:
     primeira = page.locator(".visita").first
     expect(primeira).to_contain_text("Sítio Água Limpa")
     expect(primeira).to_contain_text("O que a tela mostrou")
-    foto(page, "10-tecnico-rota", "Técnico vê a rota na ordem liberada e o que a tela mostrou de cada talhão")
+    expect(page.locator(".visita").nth(1).get_by_role("button", name="Registrar laudo desta visita")).to_be_visible()
+    foto(page, "10-tecnico-rota", "Técnico vê a rota na ordem liberada; só a próxima visita abre o laudo")
     primeira.get_by_label("Praga confirmada na visita").select_option("Ferrugem")
     primeira.locator(".faixas button").nth(1).click()  # a faixa 10-20%
     primeira.get_by_label("Ajuste fino da severidade").fill("13")
     primeira.get_by_label("Observação").fill("Ferrugem no terço inferior; reaplicar em 7 dias.")
     primeira.get_by_role("button", name="Assinar laudo").click()
     expect(primeira.locator(".aviso")).to_contain_text("Concordou com a tela")
-    foto(page, "11-tecnico-laudo", "Laudo assinado: o banco decide a concordância e devolve a taxa nova")
+    foto(page, "11-tecnico-laudo", "Laudo assinado: o banco decide a concordância e devolve a taxa nova", primeira.get_by_label("Praga confirmada na visita"))
 
     # 5. produtor recebe o retorno com nome e registro
     entrar(page, "produtor")
     expect(page.locator("#retornos")).to_contain_text("Rafael Souza")
-    foto(page, "12-produtor-retorno", "O produtor recebe a resposta identificada da técnica")
+    foto(page, "12-produtor-retorno", "O produtor recebe a resposta identificada da técnica", page.locator("#retornos"))
 
     # 6. gestor ve a taxa laudo x modelo
     entrar(page, "gestor")

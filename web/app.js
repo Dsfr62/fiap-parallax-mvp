@@ -395,10 +395,11 @@ async function telaTecnico() {
   apoio.textContent = r.items.length
     ? `Semana ${r.week}: ${r.items.length} visitas na ordem da coordenação, ${feitas} com laudo.`
     : "A coordenação ainda não liberou a rota desta semana.";
-  document.getElementById("visitas").replaceChildren(...r.items.map((v) => cartaoVisita(v, r.pests)));
+  const proxima = r.items.findIndex((i) => !i.report_id);
+  document.getElementById("visitas").replaceChildren(...r.items.map((v, pos) => cartaoVisita(v, r.pests, pos === proxima)));
 }
 
-function cartaoVisita(v, pragas) {
+function cartaoVisita(v, pragas, aberta) {
   const feito = Boolean(v.report_id);
   const card = h("li", { class: `visita${feito ? " feito" : ""}`, "data-id": v.plot_id },
     h("header", {},
@@ -446,7 +447,13 @@ function cartaoVisita(v, pragas) {
       msg.textContent = `Não gravou: ${e.message}`;
     }
   });
-  card.append(form);
+  if (aberta) {
+    card.append(form);
+  } else {
+    const abrir = h("button", { class: "botao secundario", type: "button" }, "Registrar laudo desta visita");
+    abrir.addEventListener("click", () => abrir.replaceWith(form));
+    card.append(abrir);
+  }
   return card;
 }
 
