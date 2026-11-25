@@ -1,0 +1,14 @@
+{
+  "name": "Parallax MVP com Oracle Database Free",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "hostRequirements": { "cpus": 2, "memory": "8gb" },
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "Parallax", "onAutoForward": "openBrowser" }
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "postStartCommand": "bash .devcontainer/iniciar.sh"
+}

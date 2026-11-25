@@ -16,15 +16,15 @@ Só vale gente de verdade. Resposta inventada não entra no documento.
 
 ## Antes de começar
 
-1. Rode o MVP pelo README (caminho A, com o Oracle da FIAP) e faça `python -m parallax.setup` para começar com o banco limpo.
-2. Para o produtor testar no celular: suba com `PARALLAX_HOST=0.0.0.0`, conecte o celular na mesma rede e abra `http://IP-do-computador:8000`.
+1. Abra o MVP pelo README: o caminho A (Codespaces, sem instalar nada) é o mais simples. Cada início do Codespace começa com o banco limpo.
+2. Cada pessoa usa a tela no computador de quem conduz o teste. O produtor pode usar o celular se o computador e o celular estiverem na mesma rede (caminho B ou C, com `PARALLAX_HOST=0.0.0.0` e o endereço `http://IP-do-computador:8000`).
 3. Não explique a tela antes. Leia só a tarefa e marque o tempo.
 
 ## Tarefas (na ordem do ciclo)
 
 | Nº | Quem | Tarefa lida em voz alta | Concluiu quando |
 |---|---|---|---|
-| 1 | P3 | "Mande uma foto de uma folha do Talhão 2, sem sinal" (modo avião ligado) | Contador mostra 1 foto esperando |
+| 1 | P3 | "Mande uma foto de uma folha do Talhão 2, sem sinal" (modo avião no celular ou Wi-Fi desligado no computador) | Contador mostra 1 foto esperando |
 | 2 | P3 | "Volte o sinal e me diga se a foto chegou na cooperativa" | Lê "chegou à cooperativa" |
 | 3 | P1 | "Me explique por que o primeiro talhão está no topo" | Explica com as palavras da tela |
 | 4 | P1 | "Suba a quarta propriedade uma posição e libere a rota" | Lê "Rota liberada para o técnico" |

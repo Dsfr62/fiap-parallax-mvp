@@ -30,9 +30,15 @@ Projeto do grupo para o Enterprise Challenge e o Startup One da FIAP (Engenharia
 
 ## Como rodar
 
-São três caminhos, com o mesmo código. Em todos, a senha fica no seu terminal (ou num `.env` que não vai para o git), nunca no repositório.
+São quatro caminhos, com o mesmo código. Em todos, a senha fica no seu terminal (ou num `.env` que não vai para o git), nunca no repositório.
 
-### A. Com o Oracle da FIAP (sem Docker)
+### A. No navegador, sem instalar nada (GitHub Codespaces)
+
+[![Abrir no GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Dsfr62/fiap-parallax-mvp)
+
+Clique no botão, entre com a sua conta do GitHub e espere de 3 a 5 minutos: o Codespace sobe o Oracle Database Free e o Parallax sozinhos. Quando o terminal mostrar "Parallax no ar", abra a aba PORTS, porta 8000. A senha dos usuários de demonstração aparece no terminal (e fica no `.env` do Codespace). Usa a cota gratuita do GitHub; pare o Codespace ao terminar.
+
+### B. Com o Oracle da FIAP (sem Docker)
 
 Precisa de Python 3.10 ou mais novo e da conta Oracle do seu RM.
 
@@ -57,11 +63,11 @@ python -m parallax                       # abre em http://127.0.0.1:8000
 
 O setup só apaga e recria objetos com o prefixo `PX_`; o resto da sua conta não muda.
 
-### B. Com Docker
+### C. Com Docker
 
 Crie o `.env` a partir do `.env.exemplo` (só `PARALLAX_PASSWORD` e `PARALLAX_DEMO_PASSWORD`) e rode `docker compose up`. Sobe o Oracle Database Free e a aplicação em http://127.0.0.1:8000.
 
-### C. No GitHub Actions
+### D. No GitHub Actions
 
 Cada push roda o workflow [MVP no Oracle](.github/workflows/mvp.yml): sobe o Oracle Database Free 23ai e o Oracle XE 21c em contêiner, monta o banco, roda os testes da API contra os dois e, no 23ai, percorre o ciclo inteiro num navegador de verdade, gravando os prints e o vídeo (artefato `evidencias-FREEPDB1`).
 
