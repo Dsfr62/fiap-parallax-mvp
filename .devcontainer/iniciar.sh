@@ -8,6 +8,8 @@ if [ ! -f .env ]; then
     "$(openssl rand -hex 12)" "$(openssl rand -hex 5)" > .env
 fi
 set -a; . ./.env; set +a
+echo "Esperando o Docker do Codespace..."
+for i in $(seq 1 60); do docker info > /dev/null 2>&1 && break; sleep 2; done
 if docker ps -a --format '{{.Names}}' | grep -q '^parallax-oracle$'; then
   docker start parallax-oracle > /dev/null
 else
