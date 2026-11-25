@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Parallax: documento consolidado da startup</title>
+<link rel="stylesheet" href="../../web/fontes-inter/inter.css">
+<style>
+  @page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+  :root { --forest:#1B4332; --forest-2:#2D6A4F; --leaf:#40916C; --leaf-bg:#ECFDF3; --leaf-border:#B7E4C7;
+          --tinta:#1F2937; --suave:#475569; --linha:#E2E8F0; --pendente:#fff4c2; --pendente-borda:#c9a400; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; background: #fff; color: var(--tinta); font: 10.2pt/1.5 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+  h1 { font-size: 32pt; line-height: 1.05; margin: 0 0 8px; color: var(--forest); letter-spacing: -.02em; }
+  h2 { font-size: 16pt; margin: 0 0 6px; color: var(--forest); border-bottom: 2px solid var(--forest-2); padding-bottom: 4px; }
+  h2 small { float: right; font-size: 9.5pt; font-weight: 500; color: var(--suave); padding-top: 6px; }
+  h3 { font-size: 11.5pt; margin: 14px 0 4px; color: var(--forest-2); }
+  p { margin: 0 0 7px; }
+  ul, ol { margin: 0 0 8px; padding-left: 18px; }
+  li { margin-bottom: 3px; }
+  code { font-family: Menlo, Consolas, monospace; font-size: 8.5pt; background: #f1f5f9; padding: 0 3px; border-radius: 3px; }
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 10px; font-size: 8.9pt; }
+  th, td { border: 1px solid var(--linha); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: var(--leaf-bg); color: var(--forest); }
+  td.n, th.n { text-align: right; white-space: nowrap; }
+  tr.total td { font-weight: 700; background: #f8fafc; }
+  .pagina { break-before: page; }
+  .sem-quebra { break-inside: avoid; }
+  figure { margin: 0; break-inside: avoid; }
+  figure img { width: 100%; border: 1px solid var(--linha); border-radius: 4px; display: block; }
+  figcaption { font-size: 8.4pt; color: var(--suave); margin-top: 3px; }
+  .telas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5mm 5mm; margin: 6px 0 10px; }
+  .fonte { font-size: 8.4pt; color: var(--suave); }
+  .caixa { background: var(--leaf-bg); border: 1px solid var(--leaf-border); border-radius: 4px; padding: 9px 12px; margin: 6px 0 10px; }
+  .pendente { background: var(--pendente); border: 1.5px dashed var(--pendente-borda); border-radius: 4px; padding: 9px 12px; margin: 6px 0 10px; font-weight: 600; }
+  .pendente-inline { background: var(--pendente); border: 1px dashed var(--pendente-borda); border-radius: 3px; padding: 0 5px; font-weight: 600; }
+  .numero { font: 700 22pt/1 'Inter', sans-serif; color: var(--forest); }
+  .tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin: 6px 0 10px; }
+  .tres div { border: 1px solid var(--linha); border-radius: 4px; padding: 8px 10px; }
+  .tres span { display: block; font-size: 8.4pt; color: var(--suave); margin-top: 3px; }
+  .capa { height: 262mm; display: flex; flex-direction: column; justify-content: space-between; }
+  .capa .topo { margin-top: 34mm; }
+  .capa .sub { font-size: 15pt; color: var(--suave); margin-bottom: 14mm; max-width: 150mm; }
+  .capa dl { display: grid; grid-template-columns: 36mm 1fr; gap: 6px 10px; margin: 0; font-size: 10.5pt; }
+  .capa dt { color: var(--suave); }
+  .capa dd { margin: 0; }
+  .marca { display: flex; align-items: center; gap: 10px; }
+  .marca i { width: 34px; height: 34px; border-radius: 8px; background: var(--leaf); display: inline-block; }
+  .canvas { display: grid; grid-template-columns: repeat(5, 1fr); grid-auto-rows: minmax(30mm, auto); gap: 2mm; font-size: 8.2pt; margin: 6px 0 10px; }
+  .canvas div { border: 1px solid var(--leaf-border); border-radius: 4px; padding: 5px 6px; }
+  .canvas b { display: block; color: var(--forest); font-size: 8.6pt; margin-bottom: 2px; }
+  .canvas .alto { grid-row: span 2; }
+  .canvas .largo { grid-column: span 5; }
+  .canvas .meio { grid-column: span 2; }
+  .canvas .meio3 { grid-column: span 3; }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<section class="capa">
+  <div class="topo">
+    <div class="marca"><i></i><h1>Parallax</h1></div>
+    <div class="sub">Documento consolidado da startup: o MVP no Oracle, o teste com usuários, o modelo de negócio e a estratégia de lançamento</div>
+    <dl>
+      <dt>Trabalho</dt><dd>Atividade do Enterprise Challenge / Startup One, Fase 7</dd>
+      <dt>Empresa parceira</dt><dd>Oracle</dd>
+      <dt>Curso</dt><dd>Engenharia de Software, FIAP, turma 4ESOA, 2026</dd>
+      <dt>Integrantes</dt><dd>Bruno Reis Lago<br>Eduardo Sávio Fonseca Resende<br>Gustavo Vieira da Silva<br>João Guilherme Mazur Ferreira<br>Marina da Conceição Pereira<br><span class="fonte">(RM de cada um no .txt do zip)</span></dd>
+      <dt>Repositório</dt><dd>https://github.com/Dsfr62/fiap-parallax-mvp</dd>
+      <dt>Vídeo</dt><dd><span class="pendente-inline">A ENTRAR: link do vídeo (Gustavo)</span></dd>
+      <dt>Pitch</dt><dd><span class="pendente-inline">A ENTRAR: arquivo do pitch em PDF (Gustavo)</span></dd>
+    </dl>
+  </div>
+  <p class="fonte">Novembro de 2026.</p>
+</section>
+
+<!-- MAPA -->
+<section class="pagina">
+  <h2>Onde está cada parte</h2>
+  <table>
+    <tr><th>Parte do enunciado</th><th>Neste documento</th><th>No zip</th></tr>
+    <tr><td>1. MVP funcional, com tecnologia Oracle</td><td>Seção 2</td><td>pasta do código (<code>fiap-parallax-mvp</code>), README com o passo a passo, prints em <code>docs/prints/</code>, vídeo do ciclo gravado pelo pipeline</td></tr>
+    <tr><td>2. Teste e validação com 3 usuários</td><td>Seção 3</td><td>roteiro em <code>docs/teste-com-usuarios.md</code></td></tr>
+    <tr><td>3. Modelo de negócio consolidado</td><td>Seção 4</td><td>este documento</td></tr>
+    <tr><td>4. Estratégia de lançamento</td><td>Seção 5</td><td>este documento</td></tr>
+    <tr><td>5. Pitch final</td><td>Seção 6</td><td>pitch em PDF e link do vídeo de até 7 minutos</td></tr>
+  </table>
+
+  <h2>1. O problema e a solução</h2>
+  <p><b>O problema (fase 5).</b> No ramo agropecuário, cada técnico de assistência atende em média 106 cooperados (OCB, 2025). A visita vai para quem liga primeiro, e a doença é descoberta quando já tomou parte da lavoura. A cooperativa também não tem como saber se o diagnóstico que chega por foto está certo.</p>
+  <p><b>A solução.</b> O Parallax fecha o ciclo da semana. O produtor manda a foto da folha, mesmo sem sinal. O banco ordena as propriedades que precisam de visita. A coordenação confere o porquê de cada posição e libera a rota. O técnico registra o laudo em poucos toques, e o produtor recebe a resposta com nome e registro de quem olhou. A cada laudo, a cooperativa mede se o que o sistema apontou foi o que o técnico encontrou no talhão.</p>
+  <div class="caixa"><b>O diferencial</b> não é o diagnóstico por foto, que já existe de graça. É a <b>ordem de visita</b> para a equipe que a cooperativa já paga e o <b>laudo que mede o acerto</b>, talhão por talhão, com a regra guardada no banco da Oracle.</div>
+</section>
+
+<!-- PARTE 1 -->
+<section class="pagina">
+  <h2>2. Parte 1: o MVP funcional <small>roda no Oracle</small></h2>
+  <h3>O fluxo principal, executável</h3>
+  <table>
+    <tr><th>Passo</th><th>Quem</th><th>O que acontece</th><th>Onde mora a regra</th></tr>
+    <tr><td>1</td><td>Produtor</td><td>Escolhe o talhão, tira a foto e vê a estimativa de lesão pela cor. Sem sinal, a foto espera na fila do aparelho e sai sozinha quando o sinal volta.</td><td>Fila no aparelho (IndexedDB); a foto vai para um BLOB no Oracle, com SHA-256 único</td></tr>
+    <tr><td>2</td><td>Coordenação</td><td>Vê a rota da semana ordenada, com a faixa de prioridade e o porquê de cada talhão em palavras. Filtra a cultura, reordena e libera.</td><td>View <code>px_v_rota_semanal</code></td></tr>
+    <tr><td>3</td><td>Técnico</td><td>Segue a rota na ordem liberada, vê o que a tela mostrou do talhão e assina o laudo.</td><td>Procedure <code>px_registrar_laudo</code></td></tr>
+    <tr><td>4</td><td>Produtor</td><td>Recebe o retorno com o nome e o registro de quem olhou.</td><td>Tabela <code>px_laudo</code></td></tr>
+    <tr><td>5</td><td>Coordenação</td><td>Acompanha a taxa laudo × modelo, no mesmo nível do laudo: o talhão na semana.</td><td>View <code>px_v_concordancia</code></td></tr>
+  </table>
+
+  <h3>A Oracle na solução</h3>
+  <p>A Oracle não entra como requisito cumprido no fim: a regra de negócio mora no banco. A ordem da rota, a praga predominante e a concordância são views; o laudo entra por uma procedure que decide a concordância na mesma transação. Assim, outra tela, um relatório ao conselho ou uma segunda cooperativa leem a mesma regra sem reimplementá-la.</p>
+  <table>
+    <tr><th>Recurso Oracle</th><th>Uso no MVP</th></tr>
+    <tr><td>Oracle Database (Free 23ai, XE 21c e o servidor da FIAP)</td><td>Banco do ciclo inteiro. O mesmo <code>schema.sql</code> roda nos três, sem mudança</td></tr>
+    <tr><td>Views da camada refinada</td><td>Ordem da rota (severidade × confiança da amostra + variação na semana), praga predominante, concordância</td></tr>
+    <tr><td>PL/SQL</td><td><code>px_registrar_laudo</code>: busca o que a tela mostrou, decide a concordância e grava</td></tr>
+    <tr><td>Restrições CHECK, UNIQUE e FOREIGN KEY</td><td>Severidade de 0 a 100, um laudo por talhão na semana, foto sem duplicata, papel válido. O erro do banco chega à tela como veio</td></tr>
+    <tr><td>Sequences e BLOB</td><td>Identificadores sem colisão entre técnicos; a foto do produtor guardada no banco e servida só a quem pode ver</td></tr>
+    <tr><td>python-oracledb, modo thin</td><td>Driver oficial, sem cliente Oracle instalado: roda em Windows, Mac e Linux</td></tr>
+  </table>
+</section>
+
+<section class="pagina">
+  <h3>As telas, com o sistema rodando</h3>
+  <p class="fonte">Prints tirados pelo próprio pipeline, num navegador de verdade, com a aplicação ligada ao Oracle Database Free 23ai. O roteiro confere o que cada tela mostra antes de fotografar.</p>
+  <div class="telas">
+    <figure><img src="../prints/03-produtor-sem-sinal.png" alt=""><figcaption>Produtor sem sinal: a foto fica na fila, com o contador.</figcaption></figure>
+    <figure><img src="../prints/04-produtor-foto-chegou.png" alt=""><figcaption>O sinal voltou: a foto saiu da fila e entrou no Oracle.</figcaption></figure>
+    <figure><img src="../prints/06-gestor-por-que.png" alt=""><figcaption>Rota da semana ordenada pelo banco, com o porquê em palavras.</figcaption></figure>
+    <figure><img src="../prints/08-gestor-rota-liberada.png" alt=""><figcaption>A coordenação mudou a ordem e liberou a rota.</figcaption></figure>
+    <figure><img src="../prints/11-tecnico-laudo.png" alt=""><figcaption>Laudo assinado: o banco decide a concordância.</figcaption></figure>
+    <figure><img src="../prints/12-produtor-retorno.png" alt=""><figcaption>O produtor recebe a resposta com nome e registro.</figcaption></figure>
+  </div>
+</section>
+
+<section class="pagina">
+  <h3>Evidência de que funciona</h3>
+  <div class="tres">
+    <div><div class="numero">16 de 16</div><span>testes da API contra o Oracle Database Free 23ai</span></div>
+    <div><div class="numero">16 de 16</div><span>os mesmos testes contra o Oracle XE 21c</span></div>
+    <div><div class="numero">14 passos</div><span>do ciclo conferidos no navegador, com prints e vídeo</span></div>
+  </div>
+  <p>A cada mudança, o GitHub Actions sobe os dois bancos Oracle em contêiner, monta o schema, carrega os dados e roda os testes: papel errado recebe 403, severidade de 142% é recusada pela restrição do banco (ORA-02290), um segundo laudo no mesmo talhão e semana é recusado (ORA-00001), a foto reenviada pela fila não duplica, e a rota calculada pelo banco reproduz, talhão por talhão, a exportação do Oracle feita na fase 6. Execução: https://github.com/Dsfr62/fiap-parallax-mvp/actions</p>
+  <div class="pendente">A ENTRAR: print do MVP rodando no Oracle da FIAP (conta do RM), sem Docker</div>
+
+  <h3>O que mudou desde a fase 6</h3>
+  <table>
+    <tr><th>Compromisso do roadmap da fase 6</th><th>No MVP</th></tr>
+    <tr><td>Laudo por talhão na semana, comparado com a praga predominante</td><td>Feito. Um laudo por talhão na semana, com a concordância decidida no banco contra a praga que a tela mostrou</td></tr>
+    <tr><td>Autenticação por papel</td><td>Feito. Produtor, coordenação e técnico, cada um só com a sua parte; senha guardada com PBKDF2</td></tr>
+    <tr><td>A rota não pode sair com a semana anterior</td><td>Feito. As views são calculadas na leitura; a semana de referência vem do relógio do banco</td></tr>
+    <tr><td>Filtro de cultura na rota</td><td>Feito</td></tr>
+    <tr><td>Offline real</td><td>Feito no app do produtor (fila e telas guardadas no aparelho); no técnico, depois do MVP</td></tr>
+    <tr><td>Upload da foto</td><td>Feito, em BLOB no Oracle; o OCI Object Storage entra quando o volume pedir</td></tr>
+    <tr><td>Melhorias do teste de usabilidade da fase 6</td><td>Feito: faixa no lugar do número, explicação ao tocar, último talhão já escolhido, arrastar na rota, ajuste fino da severidade</td></tr>
+    <tr><td>API atrás do ORDS no Autonomous Database; retorno por WhatsApp</td><td>Depois do MVP. A API continua fina, com a regra no banco: trocar pelo ORDS não muda a regra</td></tr>
+  </table>
+  <div class="caixa"><b>O número que ia ao conselho estava errado, e agora está medido.</b> Na fase 6, a concordância comparava o laudo com uma foto só e dava 73,3%. Com o laudo comparado ao talhão na semana, os mesmos laudos históricos dão <b>53,1%</b> (17 de 32). A meta do piloto continua 85%; a diferença mostra por que medir no nível certo importa. Os dados são os sintéticos da fase 5.</div>
+
+  <h3>Limites, ditos com clareza</h3>
+  <ul>
+    <li>A estimativa de lesão é pela cor da foto (verde contra amarelo e marrom), feita no aparelho. Não é um modelo treinado; quem confirma a praga é o técnico.</li>
+    <li>Os 35 talhões, as 640 fotos e os 60 laudos são os dados sintéticos da fase 5, com o produtor pseudonimizado. Os registros dos técnicos são fictícios.</li>
+  </ul>
+</section>
+
+<!-- PARTE 2 -->
+<section class="pagina">
+  <h2>3. Parte 2: teste e validação com usuários</h2>
+  <h3>Como foi feito</h3>
+  <p>Três pessoas do público-alvo, uma por papel, usando o MVP de verdade, sem explicação prévia. As tarefas repetem as da fase 6 para comparar: mandar foto sem sinal e ver que chegou, explicar a posição de um talhão, reordenar e liberar a rota, registrar o laudo e achar a resposta do técnico. Para cada tarefa: se concluiu, o tempo, a facilidade de 1 a 5 e a fala da pessoa. Roteiro completo em <code>docs/teste-com-usuarios.md</code>.</p>
+  <div class="pendente">A ENTRAR: quem testou (perfil de cada uma das 3 pessoas, sem nome) e quando (Marina)</div>
+  <h3>Resultado por tarefa</h3>
+  <div class="pendente">A ENTRAR: tabela tarefa, pessoa, concluiu, tempo, facilidade (Marina)</div>
+  <h3>Dificuldades e feedback</h3>
+  <div class="pendente">A ENTRAR: o que travou e o que cada pessoa disse, com as falas literais (Marina)</div>
+  <h3>Ajustes feitos depois do teste</h3>
+  <div class="pendente">A ENTRAR: o que mudou no MVP por causa do teste e o que ficou para depois</div>
+  <h3>O MVP resolve o problema da fase 5?</h3>
+  <div class="pendente">A ENTRAR: análise a partir do teste (Marina)</div>
+  <p class="fonte">Referência da fase 6, para comparar: 6 de 6 tarefas concluídas, facilidade média de 4,3; o laudo levou 19 segundos com nota 5; as dúvidas foram o botão da câmera inativo e o número do score sem explicação, os dois corrigidos neste MVP.</p>
+</section>
+
+<!-- PARTE 3 -->
+<section class="pagina">
+  <h2>4. Parte 3: modelo de negócio consolidado</h2>
+  <div class="pendente">A ENTRAR: revisão do Mazur (números e premissas desta seção)</div>
+  <h3>Business Model Canvas, atualizado na fase 7</h3>
+  <div class="canvas">
+    <div class="alto"><b>Parcerias</b>Oracle (banco e nuvem); cooperativas e revendas como canal; Embrapa e Consórcio Antiferrugem para validar o diagnóstico; operadoras para cobertura rural.</div>
+    <div><b>Atividades-chave</b>Ordenar a rota da semana; registrar e medir o laudo; curadoria do dado; suporte ao departamento técnico.</div>
+    <div class="alto"><b>Proposta de valor</b>Multiplicar o alcance do técnico que a cooperativa já paga: a ordem certa de visita, com o porquê, e a medida de quanto o sistema acerta, talhão por talhão.</div>
+    <div><b>Relacionamento</b>Contrato anual com o departamento técnico; o produtor fala com o técnico que já conhece.</div>
+    <div class="alto"><b>Segmentos</b>Cooperativas agropecuárias com departamento técnico (pagam). Técnicos e coordenação (usam). Produtores associados (usam sem pagar).</div>
+    <div><b>Recursos-chave</b>Histórico por talhão no Oracle; a regra no banco; laudos validados que viram base rotulada.</div>
+    <div><b>Canais</b>Venda direta ao departamento técnico; a cooperativa distribui o app aos associados.</div>
+    <div class="meio"><b>Estrutura de custos</b>Equipe em rampa; impostos do Simples; banco Oracle e nuvem; armazenamento das fotos; custo por análise.</div>
+    <div class="meio3"><b>Fontes de receita</b>Assinatura anual de R$ 10 por associado contratado ao mês, com piso de R$ 2.500. A partir da 2ª safra, o comparativo regional (+R$ 5 por associado). Hipótese fora do plano: índice para seguro e crédito.</div>
+  </div>
+  <p class="fonte">O que mudou desde a fase 5: a proposta de valor passou do diagnóstico para a ordem de visita e o laudo que mede o acerto; a Oracle entrou como parceira de tecnologia; a métrica de acerto passou a ser por talhão na semana.</p>
+
+  <h3>Monetização</h3>
+  <p>Quem paga é a cooperativa, por associado contratado, num valor fixo nos 12 meses: a receita não cai na entressafra. Uma cooperativa de 900 associados paga R$ 9.000 por mês (R$ 108 mil por ano), menos que o custo de um agrônomo, para pôr 900 lavouras na rota. A renovação depende de 40% de adoção. Da 2ª safra em diante, o comparativo regional anonimizado (mínimo de 10 propriedades por região) soma R$ 5 por associado.</p>
+
+  <h3>Estrutura de custos, por cooperativa de 900 associados</h3>
+  <table>
+    <tr><th>Item</th><th>Premissa</th><th class="n">Por mês</th></tr>
+    <tr><td>Receita</td><td>900 associados × R$ 10</td><td class="n">R$ 9.000</td></tr>
+    <tr><td>Impostos</td><td>Simples Nacional, alíquota efetiva de cerca de 10%</td><td class="n">−R$ 900</td></tr>
+    <tr><td>Análise das fotos</td><td>900 × 40% ativos × 6 fotos ao mês, a R$ 0,0199 por análise</td><td class="n">−R$ 43</td></tr>
+    <tr><td>Armazenamento</td><td>fotos acumuladas no ano</td><td class="n">−R$ 6</td></tr>
+    <tr class="total"><td>Margem de contribuição</td><td>89% da receita</td><td class="n">R$ 8.051</td></tr>
+  </table>
+  <p class="fonte">Custos fixos fora da conta por contrato: equipe (de R$ 22,5 mil no ano 1 a R$ 38,5 mil com a folha plena) e infraestrutura (R$ 500 ao mês no ano 1). O banco do piloto cabe na camada Always Free do Oracle Autonomous Database; o banco pago entra no ano 2, com valor a cotar com a Oracle (estimado abaixo).</p>
+</section>
+
+<section class="pagina">
+  <h3>Projeção financeira simplificada (estimativa)</h3>
+  <table>
+    <tr><th>Fim do ano</th><th class="n">Cooperativas</th><th class="n">Receita mensal</th><th class="n">Impostos</th><th class="n">IA e fotos</th><th class="n">Infra e banco</th><th class="n">Equipe</th><th class="n">Resultado mensal</th></tr>
+    <tr><td>Ano 1</td><td class="n">3</td><td class="n">R$ 27.000</td><td class="n">−R$ 2.700</td><td class="n">−R$ 147</td><td class="n">−R$ 500</td><td class="n">−R$ 22.500</td><td class="n">+R$ 1.153</td></tr>
+    <tr><td>Ano 2</td><td class="n">8</td><td class="n">R$ 85.500</td><td class="n">−R$ 8.550</td><td class="n">−R$ 392</td><td class="n">−R$ 1.500</td><td class="n">−R$ 38.500</td><td class="n">+R$ 36.558</td></tr>
+    <tr><td>Ano 3</td><td class="n">15</td><td class="n">R$ 171.000</td><td class="n">−R$ 25.650</td><td class="n">−R$ 735</td><td class="n">−R$ 3.000</td><td class="n">−R$ 60.000</td><td class="n">+R$ 81.615</td></tr>
+  </table>
+  <p class="fonte">Premissas: cooperativas de 900 associados a R$ 10; o comparativo regional (+R$ 4.500 por cooperativa) só nas que completaram uma safra (3 no ano 2, 8 no ano 3); impostos de 10% nos anos 1 e 2 e 15% no ano 3, com a faixa maior do Simples; equipe do ano 3 com duas vagas a mais (suporte e desenvolvimento); infraestrutura e banco Oracle pago estimados, a cotar. O caminho até o fim do ano 1 consome cerca de R$ 80 mil de capital; o ponto de equilíbrio com a folha plena é a 5ª cooperativa.</p>
+
+  <h3>Indicadores (KPIs)</h3>
+  <table>
+    <tr><th>Indicador</th><th>O que mostra</th><th>Meta do piloto</th></tr>
+    <tr><td>Concordância laudo × modelo (talhão na semana)</td><td>Se o sistema aponta o que o técnico encontra</td><td>85% na soja</td></tr>
+    <tr><td>Adoção</td><td>Associados contratados que mandaram foto no mês</td><td>40% (condição de renovação)</td></tr>
+    <tr><td>Rota cumprida</td><td>Visitas da rota liberada com laudo na semana</td><td>80%</td></tr>
+    <tr><td>Tempo da foto à visita</td><td>Dias entre a primeira foto com lesão e o laudo</td><td>até 7 dias</td></tr>
+    <tr><td>Receita recorrente e renovação</td><td>Saúde do negócio</td><td>3 contratos no ano 1, renovação de 100% no piloto</td></tr>
+  </table>
+
+  <h3>Do MVP ao produto escalável</h3>
+  <ul>
+    <li><b>Banco:</b> o mesmo schema vai para o Oracle Autonomous Database, que escala sozinho; a Always Free cobre o piloto.</li>
+    <li><b>API:</b> a regra já mora no banco, então a API pode ir para trás do ORDS sem mudar o comportamento.</li>
+    <li><b>Várias cooperativas:</b> uma coluna de cooperativa e o filtro nas views; tela e API não mudam.</li>
+    <li><b>Fotos:</b> do BLOB para o OCI Object Storage quando o volume pedir.</li>
+    <li><b>Diagnóstico:</b> cada laudo validado vira dado rotulado para um modelo próprio.</li>
+    <li><b>Culturas:</b> milho e café entram na safra 2, se a concordância na soja chegar a 85%.</li>
+  </ul>
+</section>
+
+<!-- PARTE 4 -->
+<section class="pagina">
+  <h2>5. Parte 4: estratégia de lançamento</h2>
+  <div class="pendente">A ENTRAR: revisão do Bruno (público, primeiros clientes e posicionamento)</div>
+  <h3>Público-alvo prioritário</h3>
+  <p>Cooperativas agropecuárias de porte médio (500 a 2.000 associados), com departamento técnico próprio e predominância de soja, em região com pressão de ferrugem e com sinal de celular em parte da área. O decisor é a gerência do departamento técnico; quem usa todo dia são os técnicos e a coordenação; o produtor usa o app sem pagar.</p>
+
+  <h3>Como conquistar os primeiros clientes</h3>
+  <table>
+    <tr><th>Etapa</th><th>O que fazer</th><th>Sinal de que deu certo</th></tr>
+    <tr><td>1. Lista curta</td><td>Cooperativas do perfil acima no Anuário do Cooperativismo (OCB); contato direto com a gerência técnica, com a apresentação de 7 minutos</td><td>10 conversas marcadas</td></tr>
+    <tr><td>2. Demonstração com o dado dela</td><td>O MVP rodando com 30 dias de fotos da própria cooperativa: a rota que teria saído e por quê</td><td>A gerência pede o piloto</td></tr>
+    <tr><td>3. Piloto pago de uma safra</td><td>100 a 200 associados, no piso de R$ 2.500 ao mês, com metas escritas no contrato: adoção, rota usada toda semana e concordância medida</td><td>Metas batidas na safra</td></tr>
+    <tr><td>4. Contrato anual e caso público</td><td>Conversão para todos os associados e o resultado do piloto como caso, com autorização</td><td>2 cooperativas vizinhas pedindo demonstração</td></tr>
+  </table>
+  <p>Canais de apoio: as organizações estaduais do cooperativismo, as feiras do setor e a validação agronômica com a Embrapa e o Consórcio Antiferrugem, que dão credibilidade à conversa.</p>
+
+  <h3>Posicionamento competitivo</h3>
+  <table>
+    <tr><th>Alternativa</th><th>O que faz bem</th><th>O que não resolve para a cooperativa</th></tr>
+    <tr><td>Apps gratuitos de diagnóstico por foto (Plantix)</td><td>Diagnóstico rápido para o produtor</td><td>Atende o produtor isolado e vive de comissão sobre insumo; não ordena a visita nem mede o acerto</td></tr>
+    <tr><td>Plataformas da indústria de insumo (Syngenta, Bayer)</td><td>Já estão dentro das cooperativas</td><td>O diagnóstico alimenta o funil de venda da própria indústria</td></tr>
+    <tr><td>Planilha e telefone (o que existe hoje)</td><td>Custo zero</td><td>A visita vai para quem liga primeiro; ninguém mede o acerto</td></tr>
+    <tr><td><b>Parallax</b></td><td colspan="2">O painel da carteira inteira para a cooperativa, com a ordem de visita explicada, o laudo que mede o acerto e neutralidade em contrato: o diagnóstico nunca vira gatilho automático de venda. Regra no Oracle, pronta para escalar.</td></tr>
+  </table>
+
+  <h3>Crescimento sustentável</h3>
+  <ul>
+    <li><b>Receita fixa anual</b>, imune à entressafra, desde o primeiro contrato.</li>
+    <li><b>Equipe por marco:</b> uma vaga nova só abre quando a receita recorrente cobre 1,5 vez o custo dela.</li>
+    <li><b>Crescer por região:</b> cooperativas vizinhas aumentam o valor do comparativo regional, que exige 10 propriedades por região.</li>
+    <li><b>Confiança antes de escala:</b> nova cultura só entra com a concordância da anterior medida e na meta.</li>
+    <li><b>Dado do produtor:</b> consentimento explícito e revogável, e o produtor leva o próprio histórico se sair (LGPD).</li>
+  </ul>
+</section>
+
+<!-- PARTE 5 -->
+<section class="pagina">
+  <h2>6. Parte 5: pitch final e vídeo</h2>
+  <table>
+    <tr><th>Item pedido</th><th>Onde está</th></tr>
+    <tr><td>Problema, solução, mercado</td><td>Pitch em PDF; seções 1 e 4 deste documento</td></tr>
+    <tr><td>Demonstração do MVP</td><td>Vídeo de até 7 minutos; seção 2</td></tr>
+    <tr><td>Modelo de negócio, projeções</td><td>Pitch em PDF; seção 4</td></tr>
+    <tr><td>Tecnologia, com a integração Oracle</td><td>Pitch em PDF; seção 2</td></tr>
+    <tr><td>Diferencial, estratégia de crescimento</td><td>Pitch em PDF; seção 5</td></tr>
+    <tr><td>Time</td><td>Pitch em PDF; seção 7</td></tr>
+  </table>
+  <div class="pendente">A ENTRAR: pitch em PDF, com os 10 itens (Gustavo)</div>
+  <div class="pendente">A ENTRAR: link do vídeo de até 7 minutos, com o sistema rodando (Gustavo)</div>
+
+  <h2>7. Time</h2>
+  <table>
+    <tr><th>Integrante</th><th>Na fase 7</th></tr>
+    <tr><td>Bruno Reis Lago</td><td>Estratégia de lançamento</td></tr>
+    <tr><td>Eduardo Sávio Fonseca Resende</td><td>MVP, integração com o Oracle e montagem da entrega</td></tr>
+    <tr><td>Gustavo Vieira da Silva</td><td>Pitch e vídeo</td></tr>
+    <tr><td>João Guilherme Mazur Ferreira</td><td>Modelo de negócio</td></tr>
+    <tr><td>Marina da Conceição Pereira</td><td>Teste e validação com usuários</td></tr>
+  </table>
+
+  <h2>8. Uso de IA e fontes</h2>
+  <p>O código do MVP e o rascunho deste documento foram escritos com a ajuda de um assistente de código com IA (Claude Code), conduzido e revisado pelo grupo. Números de mercado e de custo vêm da pesquisa da fase 5 (Sistema OCB, AnuárioCoop 2026; ConectarAGRO e Anatel; Andav; Embrapa Soja e Consórcio Antiferrugem). Os dados do MVP são sintéticos, da fase 5; nenhuma fala de usuário neste documento é inventada.</p>
+</section>
+
+</body>
+</html>
