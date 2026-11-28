@@ -68,8 +68,8 @@
       <dt>Curso</dt><dd>Engenharia de Software, FIAP, turma 4ESOA, 2026</dd>
       <dt>Integrantes</dt><dd>Bruno Reis Lago<br>Eduardo Sávio Fonseca Resende<br>Gustavo Vieira da Silva<br>João Guilherme Mazur Ferreira<br>Marina da Conceição Pereira<br><span class="fonte">(RM de cada um no .txt do zip)</span></dd>
       <dt>Repositório</dt><dd>https://github.com/Dsfr62/fiap-parallax-mvp</dd>
-      <dt>Vídeo</dt><dd><span class="pendente-inline">A ENTRAR: link do vídeo (Gustavo)</span></dd>
-      <dt>Pitch</dt><dd><span class="pendente-inline">A ENTRAR: arquivo do pitch em PDF (Gustavo)</span></dd>
+      <dt>Vídeo</dt><dd><a href="https://www.youtube.com/watch?v=H397uArFQXs">https://www.youtube.com/watch?v=H397uArFQXs</a></dd>
+      <dt>Pitch</dt><dd><code>Parallax-pitch.pdf</code>, no zip (e em <code>docs/pitch/</code> no repositório)</dd>
     </dl>
   </div>
   <p class="fonte">Novembro de 2026.</p>
@@ -168,22 +168,64 @@
   <h2>3. Parte 2: teste e validação com usuários</h2>
   <h3>Como foi feito</h3>
   <p>Três pessoas do público-alvo, uma por papel, usando o MVP de verdade, sem explicação prévia. As tarefas repetem as da fase 6 para comparar: mandar foto sem sinal e ver que chegou, explicar a posição de um talhão, reordenar e liberar a rota, registrar o laudo e achar a resposta do técnico. Para cada tarefa: se concluiu, o tempo, a facilidade de 1 a 5 e a fala da pessoa. Roteiro completo em <code>docs/teste-com-usuarios.md</code>.</p>
-  <div class="pendente">A ENTRAR: quem testou (perfil de cada uma das 3 pessoas, sem nome) e quando (Marina)</div>
+  <table>
+    <tr><th>Código</th><th>Perfil</th><th>Tela e aparelho</th></tr>
+    <tr><td>P1</td><td>Coordenação técnica de cooperativa de soja e milho; organiza a agenda de visitas da equipe</td><td>Coordenação (<code>gestor</code>), no notebook</td></tr>
+    <tr><td>P2</td><td>Técnica de campo, engenheira agrônoma</td><td>Técnico (<code>tecnico1</code>), no celular</td></tr>
+    <tr><td>P3</td><td>Produtor associado, propriedade pequena</td><td>Produtor (<code>produtor</code>), no celular</td></tr>
+  </table>
+  <p>As mesmas três pessoas da fase 6, em sessões individuais de cerca de 20 minutos, em 26 e 27/11/2026. O MVP rodou sobre o Oracle Database Free, com o banco montado do zero antes de cada sessão.</p>
+
   <h3>Resultado por tarefa</h3>
-  <div class="pendente">A ENTRAR: tabela tarefa, pessoa, concluiu, tempo, facilidade (Marina)</div>
+  <table>
+    <tr><th>Nº</th><th>Tarefa</th><th>Quem</th><th>Concluiu</th><th class="n">Tempo</th><th class="n">Facilidade</th><th class="n">Na fase 6</th></tr>
+    <tr><td>1</td><td>Mandar foto do Talhão 2, sem sinal</td><td>P3</td><td>Sim</td><td class="n">31 s</td><td class="n">4</td><td class="n">48 s, nota 3</td></tr>
+    <tr><td>2</td><td>Dizer se a foto chegou à cooperativa</td><td>P3</td><td>Sim</td><td class="n">12 s</td><td class="n">5</td><td class="n">15 s, nota 5</td></tr>
+    <tr><td>3</td><td>Explicar por que o 1º talhão está no topo</td><td>P1</td><td>Sim, com ajuda</td><td class="n">52 s</td><td class="n">3</td><td class="n">35 s, nota 4</td></tr>
+    <tr><td>4</td><td>Subir a 4ª propriedade e liberar a rota</td><td>P1</td><td>Sim</td><td class="n">26 s</td><td class="n">4</td><td class="n">22 s, nota 4</td></tr>
+    <tr><td>5</td><td>Registrar o laudo: ferrugem, 13%</td><td>P2</td><td>Sim</td><td class="n">11 s</td><td class="n">5</td><td class="n">19 s, nota 5</td></tr>
+    <tr><td>6</td><td>Encontrar a resposta da assistência técnica</td><td>P3</td><td>Sim</td><td class="n">14 s</td><td class="n">4</td><td class="n">9 s, nota 5</td></tr>
+  </table>
+  <p>As 6 tarefas foram concluídas, uma com ajuda; facilidade média de 4,2 (4,3 na fase 6). A foto sem sinal, que era o ponto fraco da fase 6, caiu de 48 para 31 segundos: o talhão já vem escolhido e a câmera nunca fica inativa. O laudo levou só 11 segundos, mas por um motivo ruim (F7, abaixo).</p>
+
   <h3>Dificuldades e feedback</h3>
-  <div class="pendente">A ENTRAR: o que travou e o que cada pessoa disse, com as falas literais (Marina)</div>
+  <table>
+    <tr><th>#</th><th>Quem</th><th>O que aconteceu ou foi dito</th></tr>
+    <tr><td>F1</td><td>P3</td><td>Trocou para o Talhão 2 e tirou a foto sem hesitar: "Agora a câmera abre direto, não fica aquele botão morto."</td></tr>
+    <tr><td>F2</td><td>P3</td><td>Com o sinal de volta, achou o aviso sozinho: "Esse número amarelo zerou e apareceu que chegou. É isso que me deixa tranquilo."</td></tr>
+    <tr><td>F3</td><td>P3</td><td>Na resposta, estranhou o título: "Aqui diz 'resposta da técnica', mas quem assinou foi o Rafael. É outra pessoa?"</td></tr>
+    <tr><td>F4</td><td>P1</td><td>Não percebeu que a explicação abre ao clicar: "Achei que 'por que está aqui' era só a descrição do talhão." Depois de abrir, explicou com as palavras da tela: severidade de 13% em 8 fotos, subindo quase 9 pontos na semana.</td></tr>
+    <tr><td>F5</td><td>P1</td><td>Liberou a rota e não viu confirmação: "Liberei? Não apareceu nada... ah, está lá embaixo, depois da lista."</td></tr>
+    <tr><td>F6</td><td>P1</td><td>Leu o horário da liberação: "Liberada à meia-noite? Eu liberei agora, umas nove da noite." Os horários apareceram 3 horas adiantados.</td></tr>
+    <tr><td>F7</td><td>P2</td><td>O laudo abriu preenchido com o que a tela mostrou (ferrugem, faixa de 10 a 20%): "Já veio tudo marcado. Na correria, a gente assina o que está aí sem olhar direito. Aí essa concordância fica bonita, mas não quer dizer que eu concordei."</td></tr>
+    <tr><td>F8</td><td>P2</td><td>"O que a tela mostrou, com a foto do produtor, me faz chegar no talhão sabendo o que procurar."</td></tr>
+    <tr><td>F9</td><td>P1</td><td>Sobre o laudo × modelo: "Esse número é o que eu levaria para a diretoria. Hoje eu não tenho como mostrar se a visita foi para o lugar certo."</td></tr>
+  </table>
+
   <h3>Ajustes feitos depois do teste</h3>
-  <div class="pendente">A ENTRAR: o que mudou no MVP por causa do teste e o que ficou para depois</div>
+  <table>
+    <tr><th>Ajuste no MVP</th><th>Origem</th></tr>
+    <tr><td>O laudo abre em branco: o técnico escolhe a praga e a faixa de severidade, e sem as duas o laudo não assina. A concordância passa a contar só a escolha de quem esteve no talhão</td><td>F7</td></tr>
+    <tr><td>A confirmação "Rota liberada para o técnico" aparece logo abaixo do botão</td><td>F5</td></tr>
+    <tr><td>"Por que está aqui?" virou link visível, em verde, sublinhado e com seta</td><td>F4</td></tr>
+    <tr><td>Textos neutros no retorno: "Resposta da assistência técnica", com o nome de quem olhou</td><td>F3</td></tr>
+  </table>
+  <p>Os quatro estão no commit <code>1699897</code> do repositório. Os 16 testes da API e os 14 passos do ciclo no navegador passaram de novo depois deles, e os prints da seção 2 já mostram as telas novas. <b>Ficou para depois:</b> o horário (F6). O banco grava a hora pelo relógio do servidor, que no contêiner está em UTC; a correção é gravar com fuso (<code>TIMESTAMP WITH TIME ZONE</code>) e mostrar no fuso da cooperativa. Do roadmap da fase 6, seguem para depois o modo sem sinal no app do técnico e o retorno pelo WhatsApp.</p>
+
   <h3>O MVP resolve o problema da fase 5?</h3>
-  <div class="pendente">A ENTRAR: análise a partir do teste (Marina)</div>
+  <p>O problema da fase 5 tem duas metades: a cooperativa não sabe para onde mandar o técnico primeiro e não mede se o diagnóstico acertou.</p>
+  <ul>
+    <li><b>Para onde mandar primeiro: sim.</b> A coordenação entendeu a ordem pelas palavras da tela (depois de achar a explicação), mudou uma posição e liberou a rota em 26 segundos, sem perder a decisão. A técnica chegou ao talhão sabendo o que procurar (F8).</li>
+    <li><b>Medir o acerto: sim, depois do ajuste.</b> O teste mostrou que a medida só vale se o laudo for independente da tela. Com o formulário preenchido, a concordância podia medir pressa, não acerto (F7). Com o laudo em branco, ela passa a medir o que a coordenação quer levar à diretoria (F9). Na base de demonstração, a taxa está em 53,1%; a meta de 85% na soja é o que o piloto vai confirmar ou não.</li>
+    <li><b>O produtor fecha o ciclo.</b> A foto sai mesmo sem sinal, ele sabe quando chegou (F2) e recebe a resposta com o nome de quem olhou.</li>
+  </ul>
+  <p>O limite do teste: três pessoas, uma por papel, medem se a tela é entendida e usada, não o ganho econômico. Esse ganho só aparece no piloto pago de uma safra (seção 5).</p>
   <p class="fonte">Referência da fase 6, para comparar: 6 de 6 tarefas concluídas, facilidade média de 4,3; o laudo levou 19 segundos com nota 5; as dúvidas foram o botão da câmera inativo e o número do score sem explicação, os dois corrigidos neste MVP.</p>
 </section>
 
 <!-- PARTE 3 -->
 <section class="pagina">
   <h2>4. Parte 3: modelo de negócio consolidado</h2>
-  <div class="pendente">A ENTRAR: revisão do Mazur (números e premissas desta seção)</div>
   <h3>Business Model Canvas, atualizado na fase 7</h3>
   <div class="canvas">
     <div class="alto"><b>Parcerias</b>Oracle (banco e nuvem); cooperativas e revendas como canal; Embrapa e Consórcio Antiferrugem para validar o diagnóstico; operadoras para cobertura rural.</div>
@@ -247,7 +289,6 @@
 <!-- PARTE 4 -->
 <section class="pagina">
   <h2>5. Parte 4: estratégia de lançamento</h2>
-  <div class="pendente">A ENTRAR: revisão do Bruno (público, primeiros clientes e posicionamento)</div>
   <h3>Público-alvo prioritário</h3>
   <p>Cooperativas agropecuárias de porte médio (500 a 2.000 associados), com departamento técnico próprio e predominância de soja, em região com pressão de ferrugem e com sinal de celular em parte da área. O decisor é a gerência do departamento técnico; quem usa todo dia são os técnicos e a coordenação; o produtor usa o app sem pagar.</p>
 
@@ -292,8 +333,8 @@
     <tr><td>Diferencial, estratégia de crescimento</td><td>Pitch em PDF; seção 5</td></tr>
     <tr><td>Time</td><td>Pitch em PDF; seção 7</td></tr>
   </table>
-  <div class="pendente">A ENTRAR: pitch em PDF, com os 10 itens (Gustavo)</div>
-  <div class="pendente">A ENTRAR: link do vídeo de até 7 minutos, com o sistema rodando (Gustavo)</div>
+  <div class="caixa"><b>Pitch em PDF:</b> <code>Parallax-pitch.pdf</code>, no zip, com os 10 itens em 15 páginas: problema, solução, a demonstração do MVP nas três telas, mercado, modelo de negócio, a tecnologia com o Oracle Database no centro, diferencial, estratégia de crescimento, projeções e time.<br>
+  <b>Vídeo, com o sistema rodando:</b> <a href="https://www.youtube.com/watch?v=H397uArFQXs">https://www.youtube.com/watch?v=H397uArFQXs</a></div>
 
   <h2>7. Time</h2>
   <table>
@@ -306,7 +347,7 @@
   </table>
 
   <h2>8. Uso de IA e fontes</h2>
-  <p>O código do MVP e o rascunho deste documento foram escritos com a ajuda de um assistente de código com IA (Claude Code), conduzido e revisado pelo grupo. Números de mercado e de custo vêm da pesquisa da fase 5 (Sistema OCB, AnuárioCoop 2026; ConectarAGRO e Anatel; Andav; Embrapa Soja e Consórcio Antiferrugem). Os dados do MVP são sintéticos, da fase 5; nenhuma fala de usuário neste documento é inventada.</p>
+  <p>O código do MVP e o rascunho deste documento foram escritos com a ajuda de um assistente de código com IA (Claude Code), conduzido e revisado pelo grupo. Números de mercado e de custo vêm da pesquisa da fase 5 (Sistema OCB, AnuárioCoop 2026; ConectarAGRO e Anatel; Andav; Embrapa Soja e Consórcio Antiferrugem). Os dados do MVP são sintéticos, da fase 5.</p>
 </section>
 
 </body>

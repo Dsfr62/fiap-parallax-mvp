@@ -103,12 +103,13 @@ A ordem da rota calculada pelo banco reproduz a exportação do Oracle da fase 6
 | API atrás do ORDS no Autonomous Database | Não feito: a API continua em Python, fina, com a regra no banco; trocar pelo ORDS não muda a regra |
 | Usabilidade do teste da fase 6 | Feito: faixa (alta, média, baixa) no lugar do número, explicação ao tocar, último talhão pré-selecionado, arrastar na rota e ajuste fino da severidade |
 | Retorno por WhatsApp | Não feito: o retorno chega na tela do produtor |
+| Teste com usuários da fase 7 | Feito: o laudo abre em branco (a concordância conta só a escolha do técnico), a confirmação da rota aparece ao lado do botão, "Por que está aqui?" virou link visível e o retorno tem texto neutro. O horário em UTC no contêiner fica para depois |
 
 ## Limites, ditos com clareza
 
 - A estimativa de lesão na foto é pela cor (verde contra amarelo e marrom), feita no aparelho. Não é um modelo treinado; a praga é a que o produtor marca, e quem confirma é o técnico.
 - Os dados são sintéticos (fase 5). Os registros dos técnicos são fictícios.
-- O teste com usuários e o modelo de negócio estão no documento consolidado do grupo, não neste repositório.
+- O teste com usuários, o modelo de negócio e a estratégia de lançamento estão no documento consolidado ([`docs/documento/documento.html`](docs/documento/documento.html)); o pitch, em [`docs/pitch/`](docs/pitch/).
 
 ## Estrutura
 

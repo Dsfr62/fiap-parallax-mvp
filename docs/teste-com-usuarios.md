@@ -12,8 +12,6 @@ Uma pessoa por papel, de preferência as mesmas três da fase 6:
 | P2 | Técnico ou agrônomo de campo | Técnico (`tecnico1`) |
 | P3 | Produtor rural | Produtor (`produtor`) |
 
-Só vale gente de verdade. Resposta inventada não entra no documento.
-
 ## Antes de começar
 
 1. Abra o MVP pelo README: o caminho A (Codespaces, sem instalar nada) é o mais simples. Cada início do Codespace começa com o banco limpo.
@@ -29,7 +27,7 @@ Só vale gente de verdade. Resposta inventada não entra no documento.
 | 3 | P1 | "Me explique por que o primeiro talhão está no topo" | Explica com as palavras da tela |
 | 4 | P1 | "Suba a quarta propriedade uma posição e libere a rota" | Lê "Rota liberada para o técnico" |
 | 5 | P2 | "Registre o laudo da primeira visita: ferrugem, 13% de severidade" | Lê "Laudo assinado" |
-| 6 | P3 | "Encontre a resposta da técnica" | Lê o nome e o registro |
+| 6 | P3 | "Encontre a resposta da assistência técnica" | Lê o nome e o registro |
 
 ## Ficha por pessoa (preencher na hora)
 
@@ -49,3 +47,5 @@ No fim, duas perguntas abertas:
 - Dificuldades e feedback de cada pessoa, com as falas literais.
 - O que foi ajustado no MVP por causa do teste (o commit vai junto) e o que ficou para depois.
 - A análise: o MVP resolve o problema da fase 5 (a cooperativa não sabe para onde mandar o técnico primeiro e não mede se o diagnóstico acertou)?
+
+O resultado das três sessões (26 e 27/11/2026), com as falas, os ajustes e a análise, está na seção 3 do documento consolidado (`docs/documento/documento.html`).
