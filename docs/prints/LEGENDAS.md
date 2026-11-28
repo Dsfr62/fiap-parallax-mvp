@@ -11,6 +11,6 @@
 | 09-gestor-previa.png | Prévia da próxima rota, já com a foto que o produtor mandou hoje |
 | 10-tecnico-rota.png | Técnico vê a rota na ordem liberada; só a próxima visita abre o laudo |
 | 11-tecnico-laudo.png | Laudo assinado: o banco decide a concordância e devolve a taxa nova |
-| 12-produtor-retorno.png | O produtor recebe a resposta identificada da técnica |
+| 12-produtor-retorno.png | O produtor recebe a resposta identificada da assistência técnica |
 | 13-gestor-concordancia.png | Concordância laudo x modelo, no mesmo nível do laudo (talhão na semana) |
 | 14-api-docs.png | A API documentada (OpenAPI), servida pela própria aplicação |

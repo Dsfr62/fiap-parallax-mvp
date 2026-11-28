@@ -204,7 +204,7 @@ async function telaProdutor() {
       severidade = estimarSeveridade(img);
       document.getElementById("estimativa").textContent = severidade === null
         ? "Não achei folha na foto. Tente de perto, com a folha ocupando a tela."
-        : `Estimativa pela cor: ${num(severidade)}% da folha com sinal de lesão. A técnica confirma na visita.`;
+        : `Estimativa pela cor: ${num(severidade)}% da folha com sinal de lesão. A assistência técnica confirma na visita.`;
     };
     img.src = URL.createObjectURL(arquivo);
     document.getElementById("previa").hidden = false;
@@ -256,7 +256,7 @@ async function carregarRetorno() {
     h("b", {}, `${r.plot_name}: ${r.confirmed_pest}, ${num(r.severity_pct)}% de severidade`),
     h("span", { class: "meta" }, `${r.agronomist_name}, ${r.agronomist_registry}, olhou o talhão em ${hora(r.reported_at)}.`),
     r.note ? h("span", { class: "meta" }, `"${r.note}"`) : null))
-    : [h("li", { class: "vazio" }, "Quando a técnica visitar, a resposta aparece aqui com o nome dela.")]));
+    : [h("li", { class: "vazio" }, "Quando a assistência técnica visitar o talhão, a resposta aparece aqui, com o nome de quem olhou.")]));
 }
 
 window.addEventListener("online", () => { if (usuario?.role === "produtor") esvaziarFila(); });
@@ -332,7 +332,7 @@ function desenharRota() {
       h("div", { class: "local" },
         h("b", {}, `${i.farm_name}, ${i.plot_name}`), " ", selo(i.band, FAIXA[i.band]),
         h("details", { class: "porque" },
-          h("summary", {}, `${i.crop}, ${i.municipality}. Por que está aqui?`),
+          h("summary", {}, `${i.crop}, ${i.municipality}. `, h("span", { class: "link-porque" }, "Por que está aqui?")),
           `Severidade média de ${num(i.avg_severity_pct)}% em ${i.samples} ${i.samples === 1 ? "foto" : "fotos"}` +
           `${i.enough_samples ? "" : " (amostra pequena, pesa menos)"}, ` +
           `${i.delta_pp >= 0 ? "subiu" : "caiu"} ${num(Math.abs(i.delta_pp))} pontos contra a semana anterior. ` +
@@ -414,11 +414,12 @@ function cartaoVisita(v, pragas, aberta) {
       selo(v.agrees ? "sim" : "nao", v.agrees ? "concordou com a tela" : "não concordou")));
     return card;
   }
-  let severidade = Math.round(v.avg_severity_pct);
-  const saida = h("output", {}, `${severidade}%`);
-  const ajuste = h("input", { type: "range", min: 0, max: 100, step: 1, value: severidade, "aria-label": "Ajuste fino da severidade" });
+  // o laudo abre em branco: o tecnico escolhe o que viu, sem partir do que a tela mostrou (senao a concordancia infla)
+  let severidade = null;
+  const saida = h("output", {}, "escolha a faixa");
+  const ajuste = h("input", { type: "range", min: 0, max: 100, step: 1, value: 0, "aria-label": "Ajuste fino da severidade" });
   const faixas = [[0, 10], [10, 20], [20, 30], [30, 50], [50, 100]];
-  const botoesFaixa = faixas.map(([a, b]) => h("button", { type: "button", "aria-pressed": String(severidade >= a && severidade < b) }, `${a}-${b}%`));
+  const botoesFaixa = faixas.map(([a, b]) => h("button", { type: "button", "aria-pressed": "false" }, `${a}-${b}%`));
   const marcar = () => {
     saida.textContent = `${severidade}%`;
     ajuste.value = severidade;
@@ -426,7 +427,9 @@ function cartaoVisita(v, pragas, aberta) {
   };
   botoesFaixa.forEach((bt, i) => bt.addEventListener("click", () => { severidade = Math.round((faixas[i][0] + faixas[i][1]) / 2); marcar(); }));
   ajuste.addEventListener("input", () => { severidade = Number(ajuste.value); marcar(); });
-  const praga = h("select", { name: "confirmed_pest" }, ...pragas.map((p) => h("option", { value: p, selected: p === v.main_pest }, p)));
+  const praga = h("select", { name: "confirmed_pest" },
+    h("option", { value: "", selected: true, disabled: true }, "Escolha o que você encontrou"),
+    ...pragas.map((p) => h("option", { value: p }, p)));
   const obs = h("input", { name: "note", maxlength: 400, placeholder: "Observação para o produtor (opcional)" });
   const msg = h("p", { class: "aviso", role: "status" });
   const form = h("form", {},
@@ -436,6 +439,10 @@ function cartaoVisita(v, pragas, aberta) {
     h("button", { class: "botao", type: "submit" }, "Assinar laudo"), msg);
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
+    if (!praga.value || severidade === null) {
+      msg.textContent = !praga.value ? "Escolha a praga que você encontrou na visita." : "Escolha a faixa de severidade no talhão.";
+      return;
+    }
     try {
       const r = await api("/api/reports", json({ plot_id: v.plot_id, confirmed_pest: praga.value, severity_pct: severidade, note: obs.value || null }));
       msg.textContent = r.agrees

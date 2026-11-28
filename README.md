@@ -77,7 +77,7 @@ A senha de todos é a `PARALLAX_DEMO_PASSWORD` do setup (se você não definir, 
 
 | Usuário | Papel | Vê |
 |---|---|---|
-| `produtor` | Produtor do Sítio Água Limpa (talhões T-009-1 e T-009-2) | Mandar foto, fila sem sinal, resposta da técnica |
+| `produtor` | Produtor do Sítio Água Limpa (talhões T-009-1 e T-009-2) | Mandar foto, fila sem sinal, resposta da assistência técnica |
 | `produtor2` | Produtor da Fazenda Santo Antônio | O mesmo, só da propriedade dele |
 | `gestor` | Coordenação técnica | Rota, filtro, liberação, prévia, concordância |
 | `tecnico1`, `tecnico2`, `tecnico3` | Técnicos (registro fictício) | Rota liberada e laudo |

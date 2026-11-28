@@ -112,7 +112,7 @@ with sync_playwright() as p:
     # 5. produtor recebe o retorno com nome e registro
     entrar(page, "produtor")
     expect(page.locator("#retornos")).to_contain_text("Rafael Souza")
-    foto(page, "12-produtor-retorno", "O produtor recebe a resposta identificada da técnica", page.locator("#retornos"))
+    foto(page, "12-produtor-retorno", "O produtor recebe a resposta identificada da assistência técnica", page.locator("#retornos"))
 
     # 6. gestor ve a taxa laudo x modelo
     entrar(page, "gestor")
