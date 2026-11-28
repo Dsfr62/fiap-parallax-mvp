@@ -127,4 +127,4 @@ tests/e2e_fluxo.py    o ciclo no navegador, com prints e vídeo
 
 Bruno Reis Lago, Eduardo Sávio Fonseca Resende, Gustavo Vieira da Silva, João Guilherme Mazur Ferreira e Marina da Conceição Pereira.
 
-A base é o trabalho do grupo nas fases anteriores: o data lake da fase 5 e o protótipo, a prova de conceito e o roadmap da fase 6. Este MVP foi escrito com a ajuda de um assistente de código com IA (Claude Code), revisado e conduzido pelo grupo.
+A base é o trabalho do grupo nas fases anteriores: o data lake da fase 5 e o protótipo, a prova de conceito e o roadmap da fase 6.

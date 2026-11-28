@@ -1,4 +1,4 @@
-# AGENTS.md: Parallax MVP
+# Desenvolvimento do Parallax MVP
 
 O que é: MVP do Parallax (Challenge final da FIAP, fase 7): ciclo semanal de monitoramento de pragas para cooperativas, com a regra de negócio no Oracle.
 
