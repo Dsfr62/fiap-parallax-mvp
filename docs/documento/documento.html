@@ -67,9 +67,8 @@
       <dt>Empresa parceira</dt><dd>Oracle</dd>
       <dt>Curso</dt><dd>Engenharia de Software, FIAP, turma 4ESOA, 2026</dd>
       <dt>Integrantes</dt><dd>Bruno Reis Lago<br>Eduardo Sávio Fonseca Resende<br>Gustavo Vieira da Silva<br>João Guilherme Mazur Ferreira<br>Marina da Conceição Pereira<br><span class="fonte">(RM de cada um no .txt do zip)</span></dd>
-      <dt>Repositório</dt><dd>https://github.com/Dsfr62/fiap-parallax-mvp</dd>
       <dt>Vídeo</dt><dd><a href="https://www.youtube.com/watch?v=H397uArFQXs">https://www.youtube.com/watch?v=H397uArFQXs</a></dd>
-      <dt>Pitch</dt><dd><code>Parallax-pitch.pdf</code>, no zip (e em <code>docs/pitch/</code> no repositório)</dd>
+      <dt>Pitch</dt><dd><code>Parallax-pitch.pdf</code>, no zip</dd>
     </dl>
   </div>
   <p class="fonte">Novembro de 2026.</p>
@@ -121,7 +120,7 @@
 
 <section class="pagina">
   <h3>As telas, com o sistema rodando</h3>
-  <p class="fonte">Prints tirados pelo próprio pipeline, num navegador de verdade, com a aplicação ligada ao Oracle Database Free 23ai. O roteiro confere o que cada tela mostra antes de fotografar.</p>
+  <p class="fonte">Prints tirados num navegador de verdade, com a aplicação ligada ao Oracle Database Free 23ai, por um roteiro automatizado que confere o que cada tela mostra antes de fotografar.</p>
   <div class="telas">
     <figure><img src="../prints/03-produtor-sem-sinal.png" alt=""><figcaption>Produtor sem sinal: a foto fica na fila, com o contador.</figcaption></figure>
     <figure><img src="../prints/04-produtor-foto-chegou.png" alt=""><figcaption>O sinal voltou: a foto saiu da fila e entrou no Oracle.</figcaption></figure>
@@ -139,8 +138,8 @@
     <div><div class="numero">16 de 16</div><span>os mesmos testes contra o Oracle XE 21c</span></div>
     <div><div class="numero">14 passos</div><span>do ciclo conferidos no navegador, com prints e vídeo</span></div>
   </div>
-  <p>A cada mudança, o GitHub Actions sobe os dois bancos Oracle em contêiner, monta o schema, carrega os dados e roda os testes: papel errado recebe 403, severidade de 142% é recusada pela restrição do banco (ORA-02290), um segundo laudo no mesmo talhão e semana é recusado (ORA-00001), a foto reenviada pela fila não duplica, e a rota calculada pelo banco reproduz, talhão por talhão, a exportação do Oracle feita na fase 6. Execução: https://github.com/Dsfr62/fiap-parallax-mvp/actions</p>
-  <p>Para rodar sem instalar nada, o repositório abre no GitHub Codespaces, que sobe o Oracle Database Free e o Parallax sozinhos; também roda com o Oracle da FIAP (conta do RM) ou com Docker. Passo a passo no README.</p>
+  <p>A cada mudança, a integração contínua sobe os dois bancos Oracle em contêiner, monta o schema, carrega os dados e roda os testes: papel errado recebe 403, severidade de 142% é recusada pela restrição do banco (ORA-02290), um segundo laudo no mesmo talhão e semana é recusado (ORA-00001), a foto reenviada pela fila não duplica, e a rota calculada pelo banco reproduz, talhão por talhão, a exportação do Oracle feita na fase 6.</p>
+  <p>Para rodar sem instalar nada, o projeto abre no GitHub Codespaces, que sobe o Oracle Database Free e o Parallax sozinhos; também roda com o Oracle da FIAP (conta do RM) ou com Docker. Passo a passo no README.</p>
 
   <h3>O que mudou desde a fase 6</h3>
   <table>
@@ -210,7 +209,7 @@
     <tr><td>"Por que está aqui?" virou link visível, em verde, sublinhado e com seta</td><td>F4</td></tr>
     <tr><td>Textos neutros no retorno: "Resposta da assistência técnica", com o nome de quem olhou</td><td>F3</td></tr>
   </table>
-  <p>Os quatro estão no commit <code>1699897</code> do repositório. Os 16 testes da API e os 14 passos do ciclo no navegador passaram de novo depois deles, e os prints da seção 2 já mostram as telas novas. <b>Ficou para depois:</b> o horário (F6). O banco grava a hora pelo relógio do servidor, que no contêiner está em UTC; a correção é gravar com fuso (<code>TIMESTAMP WITH TIME ZONE</code>) e mostrar no fuso da cooperativa. Do roadmap da fase 6, seguem para depois o modo sem sinal no app do técnico e o retorno pelo WhatsApp.</p>
+  <p>Os quatro já estão no MVP. Os 16 testes da API e os 14 passos do ciclo no navegador passaram de novo depois deles, e os prints da seção 2 já mostram as telas novas. <b>Ficou para depois:</b> o horário (F6). O banco grava a hora pelo relógio do servidor, que no contêiner está em UTC; a correção é gravar com fuso (<code>TIMESTAMP WITH TIME ZONE</code>) e mostrar no fuso da cooperativa. Do roadmap da fase 6, seguem para depois o modo sem sinal no app do técnico e o retorno pelo WhatsApp.</p>
 
   <h3>O MVP resolve o problema da fase 5?</h3>
   <p>O problema da fase 5 tem duas metades: a cooperativa não sabe para onde mandar o técnico primeiro e não mede se o diagnóstico acertou.</p>

@@ -45,7 +45,7 @@ No fim, duas perguntas abertas:
 ## Depois do teste
 
 - Dificuldades e feedback de cada pessoa, com as falas literais.
-- O que foi ajustado no MVP por causa do teste (o commit vai junto) e o que ficou para depois.
+- O que foi ajustado no MVP por causa do teste e o que ficou para depois.
 - A análise: o MVP resolve o problema da fase 5 (a cooperativa não sabe para onde mandar o técnico primeiro e não mede se o diagnóstico acertou)?
 
 O resultado das três sessões (26 e 27/11/2026), com as falas, os ajustes e a análise, está na seção 3 do documento consolidado (`docs/documento/documento.html`).
